@@ -53,11 +53,14 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_513BCB448C944B5C9EBCEFC6180A4F1F }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_3E0495B0F04F4FCF9B0D572E4F299BE2 }}
 
+      - name: List downloaded files
+        run: ls -la
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'clasefinal'
           slot-name: 'Production'
-          package: '*.jar'
+          package: './clasefinal.jar'
           
