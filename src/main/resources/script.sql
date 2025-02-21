@@ -1,14 +1,7 @@
--- Crear usuario
-CREATE USER 'userproyecto01'@'%' IDENTIFIED BY 'UserProyecto123$';
--- Dar permisos
-GRANT ALL PRIVILEGES ON *.* TO 'userproyecto01'@'%' WITH GRANT OPTION;
--- Refrescar permisos
-FLUSH PRIVILEGES;
-
 -- Crear base de datos
-CREATE DATABASE IF NOT EXISTS biblioteca_db;
+CREATE DATABASE IF NOT EXISTS 'base-proyecto';
 -- Seleccionar base de datos
-USE biblioteca_db;
+USE 'base-proyecto';
 -- Crear tabla
 CREATE TABLE IF NOT EXISTS libro (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
