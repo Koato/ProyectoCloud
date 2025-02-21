@@ -18,10 +18,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Java version
+      - name: Set up Java 21
         uses: actions/setup-java@v4
         with:
-          java-version: 'java21'
+          java-version: '21'
           distribution: 'microsoft'
 
       - name: Build with Maven
@@ -55,6 +55,9 @@ jobs:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_C280B8AFD97544908FD7773F19F13CBF }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_4BBE80DE822647FF889699D93AC34AD2 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_20AAA904391C4AF5A3E613AB60790D32 }}
+
+      - name: List downloaded files
+        run: ls -la
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
