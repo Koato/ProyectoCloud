@@ -1,7 +1,7 @@
 -- Crear base de datos
-CREATE DATABASE IF NOT EXISTS 'base-proyecto';
+CREATE DATABASE IF NOT EXISTS base_proyecto;
 -- Seleccionar base de datos
-USE 'base-proyecto';
+USE base_proyecto;
 -- Crear tabla
 CREATE TABLE IF NOT EXISTS libro (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
